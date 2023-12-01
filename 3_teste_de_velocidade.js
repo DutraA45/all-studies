@@ -10,4 +10,4 @@ if (velocidade1 > velocidade2) {
     alert(veiculo2 + " é mais rápido que " + veiculo1)
 } else {
     alert(veiculo2 + " e " + veiculo1 + " possuem velocidades iguais.")
-}
+} 

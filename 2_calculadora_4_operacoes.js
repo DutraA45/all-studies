@@ -14,4 +14,4 @@ alert(
     "\nA subtração é: " + subtracao + 
     "\nA multiplicação é: " + multiplicacao + 
     "\nA divisão é: " + divisao
-    );
+    ); 

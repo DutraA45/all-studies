@@ -21,4 +21,4 @@ alert (
     atacante + "\nPoder de ataque: " + poderDeAtaque + "\n\n" +
     defensor + "\nPontos de vida: " + pontosDeVida +
     "\nPoder de defesa: " + poderDeDefesa + "\nPossui escudo: " + possuiEscudo
-)
+) 
