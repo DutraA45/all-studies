@@ -7,4 +7,4 @@ alert(
     "Recruta cadastrado com sucesso!" + 
     "\nNome completo: " + primeiroNome + " " + sobrenome + "\nCampo de estudo: " + campoDeEstudo + 
     "\nIdade: " + (2023 - anoDeNascimento)
-); 
+);

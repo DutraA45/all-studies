@@ -100,3 +100,88 @@ if (idade > 18) {
     alert("Você é menor de idade");
 }
 ~~~
+
+__Switch__
+
+~~~javascript
+const resultado = prompt("Escolha uma alternativa");
+
+const resultadoNumerico = parseFloat(resultado)
+
+switch ("resultadoNumerico") {
+    case "2":
+        alert("O resultado é 'a'");
+        break;
+    case "3":
+        alert("O resultado é 'b'");
+        break;
+    case "4":
+        alert("O resultado é 'c'");
+        break;
+    default:
+       alert("Finalizando..."); 
+       break;
+}
+~~~
+
+__While__
+
+~~~javascript
+let velocidade = 80
+
+while (velocidade > 0) {
+    alert("O carro está a " + velocidade + " km/h");
+    velocidade -= 20;
+    alert("Diminuindo 20 km/h");
+
+    if (velocidade === 40) {
+        break;
+    }
+}
+
+alert("O carro parou.")
+~~~
+
+__Do While__
+
+~~~javascript
+let velocidade = 0
+
+do {
+    alert("A velocidade do veículo é " + velocidade + " km/h")
+    velocidade -= 20
+} while (velocidade > 0) {
+
+}
+
+alert("Velocidade final: " + velocidade + " km/h")
+~~~
+
+__For__
+
+Modelo 1
+~~~javascript
+for (let indice = 0; indice <= 10; indice++) {
+    alert("Índice " + indice);
+};
+~~~
+
+Modelo 2
+~~~javascript
+let indice = 0
+
+for (alert("Inicializando o for"); indice <= 10; alert("Finalizando um bloco do for")) {
+    alert("Índice " + indice);
+}
+~~~
+
+Modelo 2
+~~~javascript
+let nome = "Jefferson Dutra";
+
+for (let i = 0; i < nome.length; i++) {
+    console.log(nome[i]);
+    break;
+    i++;
+};
+~~~
