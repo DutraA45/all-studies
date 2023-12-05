@@ -16,7 +16,7 @@
 -  let
 -  const
 
-![Diferença de declaracao de variaveis](/img/difference-variable-declarations.png)
+![Diferença de declaracao de variaveis](img/difference-variable-declarations.png)
 
 
 ### Nomenclatura de Variáveis
