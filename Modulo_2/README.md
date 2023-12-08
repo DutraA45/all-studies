@@ -406,7 +406,7 @@ const racas = personagens.reduce(function (acumulador, personagem) {
 }, {})
 ~~~
 
-##### Reduce
+##### Sort
 ~~~javascript
 // sort: ordena os elementos de um array a partir de comparações entre duplas de elementos
 personagens.sort(function (a, b) {
@@ -415,7 +415,7 @@ personagens.sort(function (a, b) {
 ~~~
 
 
-
+### Objetos Globais
 
 
 ~~~javascript
