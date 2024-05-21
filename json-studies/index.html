@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>JSON</title>
+        <script>
+        let usuario = {
+            nome: "Jefferson",
+            idade: 24,
+            Filhos: [
+            { nome: "Ana", idade: 10 },
+            { nome: "Pedro", idade: 10 },
+            ],
+        };
+
+        let strUsuario = JSON.stringify(usuario);
+        console.log(1, usuario, typeof usuario);
+        console.log(2, strUsuario, typeof strUsuario);
+
+        try {
+            let usuario2 = JSON.parse(strUsuario);
+            console.log(3, usuario2, typeof usuario2);
+        } catch (e) {
+            console.log("Erro");
+        }
+        
+        </script>
+    </head>
+    <body>
+        <h1>JSON Studies</h1>
+    </body>
+</html>
