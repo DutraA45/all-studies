@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geolocation</title>
+    <script>
+        onload = () => {
+            // 1 - A localização é obtida através do objeto geolocation que está no objeto navigator
+            let geo = navigator.geolocation;
+
+            // 3 - Declaração de função para ser executada apos o usuario liberar a geo localização. A função tem como parametro o objeto posicao que é fornecida pelo navegador
+            const geoCoords = function (posicao) {
+                let lat = posicao.coords.latitude;
+                let lng = posicao.coords.longitude;
+                output.innerHTML = 
+                `Coordenadas:(${lat}; ${lng})`
+            };
+            const geoError = function(e) {
+                console.log(e);
+            };
+
+            // 2 - A localização é obtida através do método getCurrentPosition ou watchPosition que recebem uma função (geoCoords), essa função é recebida e executada pelo navegador
+            let watchID = geo.watchPosition(geoCoords, geoError);
+            console.log(watchID);
+            stWatch.onclick = () => {
+                console.log(watchID);
+                geo.clearWatch(watchID);
+            };
+        };
+    </script>
+</head>
+<body>
+    <h1>Geolocation studies</h1>
+    <p id="output"></p>
+    <p><button id="stWatch">Para georeferenciamento</button></p>
+</body>
+</html>
