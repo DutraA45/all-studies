@@ -6,8 +6,11 @@
     <title>IndexedDB</title>
     <script>
 
-        let db;
-        let reqDB = indexedDB.open('meuDB', 1);
+        let db; // Objeto para manipular o BD
+        // 1 - Requisição de Abertura do banco de dados
+        let reqDB = indexedDB.open('meuDB', 1); // Nome e versão
+
+        // 2 - Respostas da requisição de abertura (Sucesso, Erro ou Atualização de versão)
         reqDB.onsuccess = () => {
             db = reqDB.result;
         };
@@ -15,9 +18,11 @@
             console.log(reqDB.error);
         };
         reqDB.onupgradeneeded = (e) => {
+            // 3 - Criação de um Vetor de Armazém de objetos
             db = reqDB.result;
             if(!db.objectStoreNames.contains('livros')){
                 let livrosOS = db.createObjectStore('livros', {keyPath: 'id'});
+                // Criação de indices para buscas mais especificas
                 livrosOS.createIndex('tituloIDX', 'titulo', {unique: false});
                 livrosOS.createIndex('autorIDX', 'autor', {unique: false});
             }            
@@ -25,12 +30,15 @@
 
         onload = function() {
             btnC.onclick = () => {
+                // 4 - Criação do objeto informado pelo usuário
                 let livro = {
                     id: +idLivro.value,
                     titulo: titulo.value,
                     autor: autor.value
                 };
 
+                // 5 - Criação da transação CREATE
+                // Transações recebem o Vetor de Armazém de objetos e o modo
                 let transacaoDB = db.transaction(['livros'], 'readwrite');
                 let livrosOS = transacaoDB.objectStore('livros');
                 let reqOS = livrosOS.add(livro);
@@ -54,6 +62,8 @@
                 //     console.log(reqOS.error);
                 // };
 
+
+                // 6 - Criação simplificada da transação READ
                 db.
                 transaction('livros')
                 .objectStore('livros')
@@ -64,6 +74,7 @@
             };
 
             btnD.onclick = () => {
+                // 7 - Criação simplificada da transação DELETE
                 db            
                 .transaction(['livros'], 'readwrite')
                 .objectStore('livros')
@@ -73,12 +84,14 @@
             };
 
             btnU.onclick = () => {
+                
                 let livro = {
                     id: +idLivro.value,
                     titulo: titulo.value,
                     autor: autor.value
                 };
 
+                // 8 - Criação simplificada da transação UPDATE
                 db            
                 .transaction(['livros'], 'readwrite')
                 .objectStore('livros')
@@ -87,7 +100,8 @@
                 };
             };
 
-            btnL.onclick = () => {  
+            btnL.onclick = () => {
+                // 9 - Criação de uma transação de listagem utilizando CURSOR e com definição de filtros de ID (UpperBound ou Range)
                 db            
                 .transaction('livros')
                 .objectStore('livros')
@@ -105,6 +119,7 @@
             };
 
             btnRT.onclick = () => {
+                // 10 - Criação simplificada da transação READ com Indice específico
                 db.
                 transaction('livros')
                 .objectStore('livros')
@@ -116,7 +131,8 @@
                 };
             };
 
-            btnLA.onclick = () => {  
+            btnLA.onclick = () => {
+                // 10 - Criação simplificada de uma transação de listagem com Indice específico
                 db            
                 .transaction('livros')
                 .objectStore('livros')
@@ -135,6 +151,7 @@
     <p><label for="titulo">Título: </label><input type="text" id="titulo"></p>
     <p><label for="autor">Autor: </label><input type="text" id="autor"></p>
     <p>
+        <!-- Acionadores CRUD -->
         <button id="btnC">Incluir</button>
         <button id="btnR">Ler</button>
         <button id="btnU">Atualizar</button>
