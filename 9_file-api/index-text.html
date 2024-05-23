@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File API</title>
+    <script>
+        onload = () => {
+            arquivo.onchange = () => {                
+                let r = new FileReader();
+                fr.readAsText(arquivo.files[0], 'utf-8');
+                fr.onload = (e) => {
+                    output.innerHTML = e.target.result;
+                }
+            };
+            btnArquivos.onclick = () => {
+                arquivos.click();
+            };
+        };
+    </script>
+</head>
+<body>
+    <h1>File API</h1>
+    <p><input type="file" id="arquivo" style="display: none;" accept="text/plain"></p>
+    <p><button id="btnArquivos">Escolher arquivo</button></p>
+    <p id="output"></p>
+</body>
+</html>
