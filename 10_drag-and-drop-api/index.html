@@ -49,22 +49,26 @@
                 e.preventDefault();
                 z.classList.remove("zona-over");
             };
-            // z.ondrop = (e) => {
-            //     e.preventDefault();
-            //     const idCaixa = e.dataTransfer.getData('text/plain');
-            //     const elem = document.getElementById(idCaixa);
-            //     z.appendChild(elem);
-            //     z.classList.remove('zona-over');
-            // };
+            z.ondragover = (e) => {
+                e.preventDefault();
+                z.classList.add("zona-over");
+            };
             z.ondrop = (e) => {
                 e.preventDefault();
-                let arquivos = e.dataTransfer.files;
-                console.log(
-                Array.from(arquivos)
-                    .map((f) => f.name)
-                    .join("\n")
-                );
+                const idCaixa = e.dataTransfer.getData('text/plain');
+                const elem = document.getElementById(idCaixa);
+                z.appendChild(elem);
+                z.classList.remove('zona-over');
             };
+            // z.ondrop = (e) => {
+            //     e.preventDefault();
+            //     let arquivos = e.dataTransfer.files;
+            //     console.log(
+            //     Array.from(arquivos)
+            //         .map((f) => f.name)
+            //         .join("\n")
+            //     );
+            // };
             }
         };
         </script>
