@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Ajax</title>
+        <script>
+        function ajax() {
+            try {
+            // Declaração do objeto XMLHttpRequest() para o funcionamento do AJAX (Seu CORAÇÃO)
+            // Através dele é possivel fazer requisições e gerenciar respostas
+
+            let xhttp = new XMLHttpRequest();
+            
+            // Configuração das ações a serem feita a partir do estado das requisições (Tratamento de respostas)
+            // 0 - A requisição ainda não foi enviada
+            // 1 - A requisição foi enviada
+            // 2 - A requisição foi recebida
+            // 3 - A requisição está sendo processada
+            // 4 - A requisição foi finalizada e a resposta está pronta para ser lida
+
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4) {
+                if (this.status == 200) {
+                    // Requisição finalizada com sucesso
+                    // Recebe e converte o JSON em objeto
+                    let usuario = JSON.parse(this.responseText);
+                    nome.innerHTML = usuario.nome;
+                    idade.innerHTML = usuario.idade;
+                    filhos.innerHTML = usuario.filhos.map((e) => e.nome).join(", ");
+                } else {
+                    // Requisição ainda não está completa (Em andamento)
+                    console.warning("status: " + this.status);
+                }
+                }
+            };
+
+            // Criação da requisição GET (Buscando dados no servidor) de dados JSON e envio            
+            xhttp.open("GET", "dados.json", true);
+            // Envio da requisição GET
+            xhttp.send();
+            } catch (e) {
+            // Caso o navegador não suporta o AJAX
+            alert("Erro na comunicação com o servidor...");
+            }
+        }
+        </script>
+    </head>
+    <body>
+        <h1>Ajax Studies</h1>
+        <!-- Acionamento da função AJAX -->
+        <button onclick="ajax()">Carrega usuario</button>
+        <dl>
+        <dt>Nome:</dt>
+        <dd id="nome"></dd>
+        <dt>Idade:</dt>
+        <dd id="idade"></dd>
+        <dt>Filhos:</dt>
+        <dd id="filhos"></dd>
+        </dl>
+    </body>
+</html>

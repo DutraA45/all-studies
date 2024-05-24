@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>File API</title>
+        <script>
+        onload = () => {
+
+            /*
+                4 - Após definido o tipo do campo como files, é possivel ter um objeto do tipo filelist, onde é possivel ter a descrição do arquivo enviado
+
+                5 - 
+                    
+            */
+
+            // Quando algo é adicionado(alterado ou onchange) no input, executa essa função
+            arquivos.onchange = () => {
+            // for (let i = 0; i < arquivos.files.length; i++)
+            // arqs.innerHTML += arquivos.files[i].name + '<br/>';
+
+            // 6 - Insere na tela o nome dos arquivos mapeado do array arquivos files
+            arqs.innerHTML = Array.from(arquivos.files)
+                .map((f) => f.name)
+                .join("<br/>");
+            };
+
+            // 7 - Aciona através de um botão alternativo o click do input ocultado
+            btnArquivos.onclick = () => {
+            arquivos.click();
+            };
+        };
+        </script>
+    </head>
+    <body>
+        <h1>File API</h1>
+        <!-- 
+            1 - Definir o Type como File para receber arquivos
+            2 - O display none ele oculta uma mensagem automática de quantidade de arquivos enviados 
+            3 - Accept define quais arquivos podem ser recebidos
+        -->
+        <p>
+        <input
+            multiple
+            type="file"
+            id="arquivos"
+            style="display: none"
+            accept="image/*"
+        />
+        </p>
+        <p><button id="btnArquivos">Escolher arquivo</button></p>
+        <p id="arqs"></p>
+    </body>
+</html>

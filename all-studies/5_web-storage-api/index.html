@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Web Storage</title>
+        <script>
+        let usuario = {
+            nome: "Jefferson",
+            idade: 24,
+            Filhos: [
+            { nome: "Ana", idade: 10 },
+            { nome: "Pedro", idade: 10 },
+            ],
+            casado: true,
+        };
+
+        // Envio do objeto para o Web storage - Só pode enviar string
+        localStorage.setItem("usuario", JSON.stringify(usuario));
+
+        // Captura da string do objeto na Web storage 
+        let strUsuario = localStorage.getItem("usuario");
+        console.log(strUsuario, typeof strUsuario);
+
+        // Conversão da string recebida da Web storage em objeto
+        let usuario2 = JSON.parse(strUsuario);
+        console.log(usuario2, typeof usuario2);
+        </script>
+    </head>
+    <body>
+        <h1>Web Storage Studies</h1>
+    </body>
+</html>
