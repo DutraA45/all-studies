@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery</title>
+    <style>
+        .alerta {
+            color: #FFF;
+            background-color: #f00;
+        };
+    </style>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function () {
+            $('p').on('logou', function (e, d) {
+                $(this).toggleClass('alerta');
+                console.log(e);
+                console.log('logou como ' + d.usuario);
+            });
+            
+            $('#btn').click(function (e) {
+                e.stopPropagation();
+                $('#p1').trigger('logou', { usuario: 'kutova' });
+            });
+            // $("#btn").click( () => {
+            //     $('div p').toggleClass('alerta');
+            // }); 
+            
+            //$('p').html('novo parágrafo');
+            //console.log($('div p').length);
+        });
+    </script>
+</head>
+<body>
+    <h1>jQuery</h1>
+    <p><button id="btn">Clique Aqui</button></p>
+    <div>
+        <p id="p1"><span>Primeiro</span> parágrafo</p>
+    </div>
+    <p id="p2">Segundo parágrafo</p>
+    <p id="p3">Terceiro parágrafo</p>
+</body>
+</html>
