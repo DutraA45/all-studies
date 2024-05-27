@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>D3JS</title>
+        <style>
+        #grafico div {
+            background-color: lightblue;
+            padding: 5px;
+            margin-bottom: 5px;
+        }
+        </style>
+        <script src="https://d3js.org/d3.v7.min.js"></script>
+        <script>
+        onload = () => {
+            // Exemplo 4
+            let divs = d3
+            .select("#grafico")
+            .selectAll("div")
+            .data([10, 20, 30])
+
+            divs
+            .enter()
+            .append("div")
+            .text((d) => d)
+            .style("width", (d) => d * 10 + "px");
+
+        };
+        </script>
+    </head>
+    <body>
+        <h1>D3JS</h1>
+        <div id="grafico"></div>
+    </body>
+</html>
