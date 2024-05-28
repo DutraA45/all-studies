@@ -23,6 +23,10 @@ function grafico(parametros) {
         .domain([0, d3.max(parametros.dados.map((d) => d.valor))])
         .range([alturaPlotagem, 0]);
 
+    let fnCores = d3.scaleOrdinal()
+        .domain([0, parametros.dados.length])
+        .range(d3.schemeSet3);
+
     plotagem
         .selectAll(".barra")
         .data(parametros.dados)
@@ -32,7 +36,8 @@ function grafico(parametros) {
         .attr("x", (d) => fnX(d.chave))
         .attr("y", (d) => fnY(d.valor))
         .attr("width", fnX.bandwidth())
-        .attr("height", (d) => alturaPlotagem - fnY(d.valor));
+        .attr("height", (d) => alturaPlotagem - fnY(d.valor))
+        .attr("fill", (d,i) => fnCores(d.valor));
 
     plotagem
         .selectAll('.rotulo')
