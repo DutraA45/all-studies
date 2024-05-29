@@ -1,9 +1,10 @@
-function grafico(parametros) {
+function Grafico(parametros) {
     let svg = d3
         .select(parametros.seletor)
         .attr("width", parametros.largura)
         .attr("height", parametros.altura);
 
+    this.callback = parametros.callback;
     let margem = {
         esquerda: 80,
         direita: 20,
@@ -11,78 +12,104 @@ function grafico(parametros) {
         inferior: 100
     };
 
-    let larguraPlotagem = parametros.largura - margem.esquerda - margem.direita;
-    let alturaPlotagem = parametros.altura - margem.superior - margem.inferior;
+    this.larguraPlotagem = parametros.largura - margem.esquerda - margem.direita;
+    this.alturaPlotagem = parametros.altura - margem.superior - margem.inferior;
 
-    let plotagem = svg
+    this.plotagem = svg
         .append("g")
-        .attr('width', larguraPlotagem)
-        .attr('height', alturaPlotagem)
+        .attr('width', this.larguraPlotagem)
+        .attr('height', this.alturaPlotagem)
         .attr('transform', 'translate(' + margem.esquerda + ',' + margem.superior + ')');
 
-    let fnX = d3
+    this.fnX = d3
         .scaleBand()
         .domain(parametros.dados.map(d => d.chave))
-        .range([0, larguraPlotagem])
+        .range([0, this.larguraPlotagem])
         .padding(0.1);
-    let fnY = d3
+    this.fnY = d3
         .scaleLinear()
         .domain([0, d3.max(parametros.dados.map((d) => d.valor))])
-        .range([alturaPlotagem, 0]);
+        .range([this.alturaPlotagem, 0]);
 
-    let fnCores = d3.scaleOrdinal()
+    this.fnCores = d3.scaleOrdinal()
         .domain([0, parametros.dados.length])
         .range(d3.schemeSet3);
 
-    let eixoX = d3.axisBottom(fnX);
-    plotagem.append('g')
+    this.eixoX = d3.axisBottom(this.fnX);
+    this.plotagem.append('g')
         .attr('id', 'eixoX')
-        .attr('transform', 'translate(0, ' + alturaPlotagem + ')')
-        .call(eixoX);
+        .attr('transform', 'translate(0, ' + this.alturaPlotagem + ')')
+        .call(this.eixoX);
 
-    let eixoY = d3.axisLeft(fnY);
-    plotagem.append('g')
+    this.eixoY = d3.axisLeft(this.fnY);
+    this.plotagem.append('g')
         .attr('id', 'eixoY')
-        .call(eixoY);
+        .call(this.eixoY);
 
-    let grade = d3.axisRight(fnY).tickSize(larguraPlotagem).tickFormat('');
-    plotagem.append('g').attr('id', 'grade').call(grade);
+    this.grade = d3.axisRight(this.fnY).tickSize(this.larguraPlotagem).tickFormat('');
+    this.plotagem.append('g').attr('id', 'grade').call(this.grade);
 
     svg.append('text')
-    .attr('x', margem.esquerda)
-    .attr('y', margem.superior + alturaPlotagem)
-    .style('text-anchor', 'middle')
-    .attr('transform', 'translate(' + larguraPlotagem / 2 + ', 80)')
-    .text(parametros.tituloX);
+        .attr('x', margem.esquerda)
+        .attr('y', margem.superior + this.alturaPlotagem)
+        .style('text-anchor', 'middle')
+        .attr('transform', 'translate(' + this.larguraPlotagem / 2 + ', 80)')
+        .text(parametros.tituloX);
 
     svg.append('text')
         .attr('x', 0)
         .attr('y', 0)
         .style('text-anchor', 'middle')
-        .attr('transform', 'translate(30, ' + (margem.superior + alturaPlotagem / 2) + ') rotate(-90)')
+        .attr('transform', 'translate(30, ' + (margem.superior + this.alturaPlotagem / 2) + ') rotate(-90)')
         .text(parametros.tituloY);
+        
 
-    plotagem
-        .selectAll(".barra")
-        .data(parametros.dados)
-        .enter()
-        .append("rect")
-        .classed('barra', true)
-        .attr("x", (d) => fnX(d.chave))
-        .attr("y", (d) => fnY(d.valor))
-        .attr("width", fnX.bandwidth())
-        .attr("height", (d) => alturaPlotagem - fnY(d.valor))
-        .attr("fill", (d, i) => fnCores(d.valor));
+    this.atualize = (novosDados) => {
 
-    plotagem
-        .selectAll('.rotulo')
-        .data(parametros.dados)
-        .enter()
-        .append('text')
-        .classed('rotulo', true)
-        .text((d) => d.valor)
-        .attr("x", (d) => fnX(d.chave))
-        .attr("dx", () => fnX.bandwidth() * 0.5)
-        .attr("y", (d) => fnY(d.valor))
-        .attr("dy", -5)
-}
+        this.fnX.domain(novosDados.map((d) => d.chave));
+        this.fnY.domain([0, d3.max(novosDados.map((d) => d.valor))]);
+        this.fnCores.domain([0, novosDados.length]);
+
+        this.plotagem.select('#eixoX').transition().duration(this.duration).call(this.eixoX);
+        this.plotagem.select('#eixoY').transition().duration(this.duration).call(this.eixoY);
+        this.plotagem.select('#grade').transition().duration(this.duration).call(this.grade);
+
+        let self = this;
+        let retangulos = this.plotagem.selectAll('.barra').data(novosDados);
+        retangulos.enter().append('rect').classed('barra', true)
+        .on('mouseover', function(){
+            d3.select(this).style('fill-opacity', '0.5');
+        })
+        .on('mouseout', function(){
+            d3.select(this).style('fill-opacity', '1');
+        })
+        .on('click', function(e){
+            self.callback(e.target.__data__);
+        });
+        retangulos.exit().remove();
+
+        this.plotagem
+            .selectAll('.barra').transition().duration(this.duration)
+            .attr("x", (d) => this.fnX(d.chave))
+            .attr("y", (d) => this.fnY(d.valor))
+            .attr("width", this.fnX.bandwidth())
+            .attr("height", (d) => this.alturaPlotagem - this.fnY(d.valor))
+            .attr("fill", (d, i) => this.fnCores(d.valor));
+
+        let rotulos = this.plotagem.selectAll('.rotulo').data(novosDados);
+        rotulos.enter().append('text').classed('rotulo', true);
+        rotulos.exit().remove();
+
+        this.plotagem
+            .selectAll('.rotulo').transition().duration(this.duration)
+            .text((d) => d.valor)
+            .attr("x", (d) => this.fnX(d.chave))
+            .attr("dx", () => this.fnX.bandwidth() * 0.5)
+            .attr("y", (d) => this.fnY(d.valor))
+            .attr("dy", -5);
+
+            this.duration = 500;
+    };
+
+    this.atualize(parametros.dados);
+};
