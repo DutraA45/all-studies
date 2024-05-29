@@ -4,14 +4,21 @@ function grafico(parametros) {
         .attr("width", parametros.largura)
         .attr("height", parametros.altura);
 
-    let larguraPlotagem = parametros.largura - 40;
-    let alturaPlotagem = parametros.altura - 40;
+    let margem = {
+        esquerda: 80,
+        direita: 20,
+        superior: 40,
+        inferior: 100
+    };
+
+    let larguraPlotagem = parametros.largura - margem.esquerda - margem.direita;
+    let alturaPlotagem = parametros.altura - margem.superior - margem.inferior;
 
     let plotagem = svg
         .append("g")
         .attr('width', larguraPlotagem)
         .attr('height', alturaPlotagem)
-        .attr('transform', 'translate(20,20)');
+        .attr('transform', 'translate(' + margem.esquerda + ',' + margem.superior + ')');
 
     let fnX = d3
         .scaleBand()
@@ -27,6 +34,34 @@ function grafico(parametros) {
         .domain([0, parametros.dados.length])
         .range(d3.schemeSet3);
 
+    let eixoX = d3.axisBottom(fnX);
+    plotagem.append('g')
+        .attr('id', 'eixoX')
+        .attr('transform', 'translate(0, ' + alturaPlotagem + ')')
+        .call(eixoX);
+
+    let eixoY = d3.axisLeft(fnY);
+    plotagem.append('g')
+        .attr('id', 'eixoY')
+        .call(eixoY);
+
+    let grade = d3.axisRight(fnY).tickSize(larguraPlotagem).tickFormat('');
+    plotagem.append('g').attr('id', 'grade').call(grade);
+
+    svg.append('text')
+    .attr('x', margem.esquerda)
+    .attr('y', margem.superior + alturaPlotagem)
+    .style('text-anchor', 'middle')
+    .attr('transform', 'translate(' + larguraPlotagem / 2 + ', 80)')
+    .text(parametros.tituloX);
+
+    svg.append('text')
+        .attr('x', 0)
+        .attr('y', 0)
+        .style('text-anchor', 'middle')
+        .attr('transform', 'translate(30, ' + (margem.superior + alturaPlotagem / 2) + ') rotate(-90)')
+        .text(parametros.tituloY);
+
     plotagem
         .selectAll(".barra")
         .data(parametros.dados)
@@ -37,7 +72,7 @@ function grafico(parametros) {
         .attr("y", (d) => fnY(d.valor))
         .attr("width", fnX.bandwidth())
         .attr("height", (d) => alturaPlotagem - fnY(d.valor))
-        .attr("fill", (d,i) => fnCores(d.valor));
+        .attr("fill", (d, i) => fnCores(d.valor));
 
     plotagem
         .selectAll('.rotulo')
