@@ -4,6 +4,7 @@ const input = document.getElementById("input")
 const resultInput = document.getElementById("result")
 const allowedKeys = ["(", ")", "/", "*", "-", "+", "9", "8", "7", "6", "5", "4", "3", "2", "1", "0", ".", "%", " "]
 
+// Terceira Função - Associação do valor do botão com o do input
 document.querySelectorAll(".charKey").forEach(function (charKeyBtn) {
     charKeyBtn.addEventListener("click", function () {
         const value = charKeyBtn.dataset.value
@@ -11,11 +12,13 @@ document.querySelectorAll(".charKey").forEach(function (charKeyBtn) {
     })
 })
 
+// Quarta Função - Limpa o input (botão clear)
 document.getElementById("clear").addEventListener("click", function () {
     input.value = ""
     input.focus()
 })
 
+// Primeira Função - Comportamento após clicar nas teclas
 input.addEventListener("keydown", function (ev) {
     ev.preventDefault()
     if (allowedKeys.includes(ev.key)) {
@@ -32,6 +35,7 @@ input.addEventListener("keydown", function (ev) {
 
 document.getElementById("equal").addEventListener("click", calculate)
 
+// Segunda Função - 
 function calculate() {
     resultInput.value = "ERROR"
     resultInput.classList.add("error")
@@ -40,6 +44,7 @@ function calculate() {
     resultInput.classList.remove("error")
 }
 
+// Sexta Função - Configuração do botão Copy
 document.getElementById("copyToClipboard").addEventListener("click", function (ev) {
     const button = ev.currentTarget
     if (button.innerText === "Copy") {
@@ -52,6 +57,7 @@ document.getElementById("copyToClipboard").addEventListener("click", function (e
     }
 })
 
+// Quinta função - Alterar o tema
 document.getElementById("themeSwitcher").addEventListener("click", function () {
     if (main.dataset.theme === "dark") {
         root.style.setProperty("--bg-color", "#f1f5f9")
