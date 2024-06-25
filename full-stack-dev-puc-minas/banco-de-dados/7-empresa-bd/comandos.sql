@@ -32,3 +32,11 @@ WHERE cargo not in ('Vendedor', 'Presidente')
 SELECT nomemp
 FROM empregado
 WHERE comissao IS NOT null AND coddepto = 1
+
+-- Consulta retornando o salario com funções agregadas
+SELECT SUM (salario) as soma, MAX (salario) as maior, MIN (salario) as menor, AVG (salario) as media
+FROM Empregado
+
+-- Consulta da quantidade de empregados na tabela (Funcao agregada)
+SELECT count(*)
+FROM empregado
