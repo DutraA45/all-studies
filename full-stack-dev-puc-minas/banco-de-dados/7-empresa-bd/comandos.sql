@@ -66,3 +66,8 @@ FROM Projeto P, Trabalha_Em T
 WHERE P.CodProjeto = T.CodProjeto
 GROUP By P.CodProjeto, P.ProjNome
 HAVING COUNT (*) > 2;
+
+-- Consultas Aninhadas
+SELECT nomemp
+FROM empregado
+WHERE salario > ALL (SELECT salario FROM empregado WHERE coddepto =2)
