@@ -71,3 +71,8 @@ HAVING COUNT (*) > 2;
 SELECT nomemp
 FROM empregado
 WHERE salario > ALL (SELECT salario FROM empregado WHERE coddepto =2)
+
+-- JOIN
+-- Intersecao de tabelas
+SELECT *
+FROM empregado E JOIN departamento D ON E.coddepto = D.coddepto
