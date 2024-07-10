@@ -10,7 +10,9 @@ All studies
   - [ ] Typescript
   - [ ] Python
   - [x] SQL
+    - [x] Oracle Apex
   - [x] NOSQL
+    - [x] MongoDB
   - [ ] NodeJS
   - [ ] ReactJS
     - [ ] NextJS
