@@ -1,4 +1,8 @@
 # Comandos do MongoDB 
+
+1 - Abrir prompt de comando
+2 - Inicializar o Mongosh escrevendo no terminal "mongosh"
+
 ### (Conforme apresentado no curso)
 
 Apresentar o DB que está usando:
@@ -62,3 +66,7 @@ No caso do exemplo abaixo, a ação set verifica se o campo já está criado, se
 > db.albuns.update({"nome" : "Seventh Son of a Seventh Son"}, {$set : {"artista_id" : 5}})
 > db.albuns.update({"nome" : "...And Justice for All"}, {$set : {"artista_id" : 1}})
 > db.albuns.update({"nome" : "The Dark Side of the Moon"}, {$set : {"artista_id" : 7}})
+
+#### Novos albuns para consultas aninhadas
+> db.albuns.insert({"nome" : "Somewhere", dataLancamento" : new Date(1992, 5, 30), "duracao" : 3328, "artista" : {"nome" : "Blind Guardian"}});
+> db.albuns.insert({"nome" : "Imaginations from the Other Side", "dataLancamento" : new Date(1995, 3, 4), "duracao" : 2958, "artista" : {"nome" : "Blind Guardian"}});
