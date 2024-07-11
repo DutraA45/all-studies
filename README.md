@@ -13,6 +13,7 @@ All studies
     - [x] Oracle Apex
   - [x] NOSQL
     - [x] MongoDB
+    - [ ] Neo4j
   - [ ] NodeJS
   - [ ] ReactJS
     - [ ] NextJS
