@@ -44,3 +44,23 @@ Deletar campo do nó
 Deletar nó (Não pode possuir relacionamento)
 > MATCH (hendrix:Musico {nome = 'Jimi Hendrix'})
 > DELETE hendrix
+
+Importar arquivos csv
+> LOAD CSV WITH Headers
+> FROM "file:///composicoes.csv"
+> AS linha
+> RETURN linha
+
+Importar arquivos csv
+> LOAD CSV WITH Headers
+> FROM "file:///composicoes.csv"
+> AS linha
+> RETURN linha
+
+Importar arquivos csv com Merger (Não cria nós repetidos)
+> LOAD CSV WITH Headers
+> FROM "file:///composicoes.csv"
+> AS linha
+> MERGE (compositor:Musico {nome: linha.compositor})
+> MERGE (musica:Musica {nome: linha.musica})
+> MERGE (compositor)-[:COMPOS]->(musica)
