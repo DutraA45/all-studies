@@ -12,8 +12,8 @@ All studies
   - [x] Oracle Apex
 - [x] NOSQL
   - [x] MongoDB
-  - [ ] Neo4j
-- [ ] NodeJS
+  - [x] Neo4j
+- [ ] NodeJS (studying...)
 - [ ] ReactJS
   - [ ] NextJS
   - [ ] Remix
