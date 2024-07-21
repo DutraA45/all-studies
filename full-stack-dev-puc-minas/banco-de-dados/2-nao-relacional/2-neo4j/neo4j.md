@@ -30,3 +30,17 @@ Realizar consultas utilizando relacionamento como critério
 
 > MATCH (n1:Musico)-[r:GRAVOU]->(n2:Musica)
 > RETURN n1, type(r), n2
+
+Editar nós no grafo
+> MATCH (hendrix:Musico {nome = 'Jimi Hendrix'})
+> SET hendrix.data_de_nascimento = '1942-11-27'
+> RETURN hendrix
+
+Deletar campo do nó
+> MATCH (hendrix:Musico {nome = 'Jimi Hendrix'})
+> SET hendrix.data_de_nascimento = null
+> RETURN hendrix
+
+Deletar nó (Não pode possuir relacionamento)
+> MATCH (hendrix:Musico {nome = 'Jimi Hendrix'})
+> DELETE hendrix
