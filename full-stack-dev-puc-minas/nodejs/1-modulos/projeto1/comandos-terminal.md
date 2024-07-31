@@ -1,4 +1,5 @@
 # Comando utilizados no projeto 1
+## Nesse projeto é estudado a gestão de pacotes, CommonJS e ECscript e módulos internos do JS
 
 npm init
 > package name: (projeto1)
