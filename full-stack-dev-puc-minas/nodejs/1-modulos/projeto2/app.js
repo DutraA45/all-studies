@@ -10,6 +10,7 @@ var usersRouter = require('./routes/users');
 var app = express();
 
 // view engine setup
+// Define que existe um diretório de Views ('views') e que o motor utilizado é o jade
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 

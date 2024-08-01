@@ -4,8 +4,8 @@ const express = require('express')
 // Inicializa um objeto de aplicação Express
 const app = express()
 
-// Cria um manipulador da rota padrão
 // Middleware A
+// Para qualquer requisição, imprime no console a data, o tipo e a rota
 app.use((req, res, next) => {
     console.log(new Date().toLocaleDateString(), req.method, req.path)
 
