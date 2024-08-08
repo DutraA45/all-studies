@@ -1,25 +1,19 @@
 var express = require('express');
-var apiRouterV1 = express.Router();
+var apiRouterV2 = express.Router();
 
-var produtos = [
-  { "id": 1, "descricao": "Camiseta", "marca": "Nike", "preco": 49.99 },
-  { "id": 2, "descricao": "Tênis", "marca": "Adidas", "preco": 129.99 },
-  { "id": 3, "descricao": "Jaqueta", "marca": "Puma", "preco": 89.99 },
-  { "id": 4, "descricao": "Vestido", "marca": "Zara", "preco": 69.99 },
-  { "id": 5, "descricao": "Calça Jeans", "marca": "Levi's", "preco": 99.99 },
-  { "id": 6, "descricao": "Bermuda", "marca": "Reebok", "preco": 39.99 },
-  { "id": 7, "descricao": "Blusa", "marca": "Gap", "preco": 59.99 },
-  { "id": 8, "descricao": "Saia", "marca": "H&M", "preco": 29.99 },
-  { "id": 9, "descricao": "Casaco", "marca": "Columbia", "preco": 119.99 },
-  { "id": 10, "descricao": "Meias", "marca": "Under Armour", "preco": 19.99 }
-];
+const knex = require ('knex')(require('../knexfile').development)
 
-apiRouterV1.get('/produtos', function(req, res, next) {
-  res.json(produtos)
+apiRouterV2.get('/produtos', function(req, res, next) {
+  knex('produtos')
+  .select('*')
+  .then(produtos => {
+    res.status(200).json(produtos)
+  })
+  .catch(err => res.status(500).json({ message: `Erro ao obter produtos: ${err.message}`}))
 });
 
 // cRud --> Read
-apiRouterV1.get('/produtos/:id', function(req, res, next) {
+apiRouterV2.get('/produtos/:id', function(req, res, next) {
   let id = req.params.id;
   if (id) {
     idInt = Number.parseInt(id)
@@ -37,7 +31,7 @@ apiRouterV1.get('/produtos/:id', function(req, res, next) {
 });
 
 // Crud --> Create
-apiRouterV1.post('/produtos', function(req, res, next) {
+apiRouterV2.post('/produtos', function(req, res, next) {
   let produto = req.body
   let newId = Math.max(...produtos.map(o => o.id)) + 1
   produto.id = newId
@@ -46,7 +40,7 @@ apiRouterV1.post('/produtos', function(req, res, next) {
 });
 
 // cruD --> Delete
-apiRouterV1.delete('/produtos/:id', function(req, res, next) {
+apiRouterV2.delete('/produtos/:id', function(req, res, next) {
   let id = req.params.id;
   if (id) {
     idInt = Number.parseInt(id)
@@ -65,7 +59,7 @@ apiRouterV1.delete('/produtos/:id', function(req, res, next) {
 });
 
 // crUd --> Update
-apiRouterV1.put('/produtos/:id', function(req, res, next) {
+apiRouterV2.put('/produtos/:id', function(req, res, next) {
   let id = req.params.id;
   produto = req.body
   if (id) {
@@ -86,4 +80,4 @@ apiRouterV1.put('/produtos/:id', function(req, res, next) {
   }
 });
 
-module.exports = apiRouterV1;
+module.exports = apiRouterV2;
