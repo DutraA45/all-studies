@@ -13,8 +13,8 @@ All studies
 - [x] NOSQL
   - [x] MongoDB
   - [x] Neo4j
-- [ ] NodeJS (studying...)
-- [ ] ReactJS
+- [x] NodeJS 
+- [ ] ReactJS (studying...)
   - [ ] NextJS
   - [ ] Remix
 - [ ] VueJS
