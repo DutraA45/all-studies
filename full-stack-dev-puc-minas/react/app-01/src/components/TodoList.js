@@ -40,16 +40,21 @@ export function TodoList() {
         setTasks(updatedTasks);
     }
 
+    function handleOnAdd(task) {
+        const updatedTasks = tasks.concat({ id: tasks.length + 1, name:task, isCompleted: false })
+        setTasks(updatedTasks);
+    }
+
     return (
         <section className="task-list-container">
             <h1>Lista de tarefas</h1>
             <div>
                 <p><strong>Total de tarefas:</strong> {tasks.length}</p>
                 <p><strong>Tarefas pendentes:</strong> {tasks.filter(t => t.isCompleted === false).length}</p>
-                <p><strong>Tarefas pendentes:</strong> {tasks.filter(t => t.isCompleted === true).length}</p>
+                <p><strong>Tarefas completas:</strong> {tasks.filter(t => t.isCompleted === true).length}</p>
             </div>
 
-            <AddItem />
+            <AddItem onAdd={handleOnAdd}/>
             <ul>
                 {tasks.map((task) => (
                     <li key={task.id}>
