@@ -5,6 +5,7 @@ All studies
 - [x] Bootstrap
 - [ ] Tailwind
 - [ ] SCSS
+- [ ] Bulma
 - [x] Javascript
 - [ ] Typescript
 - [ ] Python
@@ -21,6 +22,8 @@ All studies
   - [ ] NuxtJS
 - [ ] Angular
   - [ ] Universal
+- [ ] React Native
+- [ ] Flutter
 - [ ] GraphQL
 - [ ] Cypress
 
