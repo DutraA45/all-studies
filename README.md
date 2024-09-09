@@ -11,6 +11,10 @@ All studies
 - [ ] Python
 - [x] SQL
   - [x] Oracle Apex
+  - [ ] PostgreSQL
+  - [ ] MariaDB
+  - [ ] MySQL
+  - [ ] SQLite
 - [x] NOSQL
   - [x] MongoDB
   - [x] Neo4j
@@ -29,4 +33,7 @@ All studies
 - [ ] Flutter
 - [ ] GraphQL
 - [ ] Cypress
+- [ ] SOLID
+- [ ] Jest
+      
 
