@@ -13,8 +13,8 @@ All studies
   - [x] Oracle Apex
   - [ ] PostgreSQL
   - [ ] MariaDB
-  - [ ] MySQL
-  - [ ] SQLite
+  - [ ] MySQL (needs review)
+  - [ ] SQLite (needs review)
 - [x] NOSQL
   - [x] MongoDB
   - [x] Neo4j
