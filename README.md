@@ -8,7 +8,7 @@ All studies
 - [ ] Bulma
 - [x] Javascript
 - [ ] Typescript
-- [ ] Python
+- [x] Python
 - [x] SQL
   - [x] Oracle Apex
   - [ ] PostgreSQL
