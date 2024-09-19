@@ -4,17 +4,17 @@ All studies
 - [x] CSS
 - [x] Bootstrap
 - [ ] Tailwind
-- [ ] SCSS
+- [x] SCSS(needs review)
 - [ ] Bulma
 - [x] Javascript
 - [ ] Typescript
-- [ ] Python
+- [x] Python
 - [x] SQL
   - [x] Oracle Apex
   - [ ] PostgreSQL
   - [ ] MariaDB
-  - [ ] MySQL (needs review)
-  - [ ] SQLite (needs review)
+  - [x] MySQL (needs review)
+  - [x] SQLite (needs review)
 - [x] NOSQL
   - [x] MongoDB
   - [x] Neo4j
@@ -30,7 +30,7 @@ All studies
 - [ ] Angular
   - [ ] Universal
 - [ ] React Native
-- [ ] Flutter
+- [x] Flutter (needs review)
 - [ ] GraphQL
 - [ ] Cypress
 - [ ] SOLID
