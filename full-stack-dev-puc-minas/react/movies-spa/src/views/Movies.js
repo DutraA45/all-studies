@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { getPopularMovies } from "../services/movies.service";
 
 export function Movies() {
