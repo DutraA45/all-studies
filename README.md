@@ -7,7 +7,7 @@ All studies
 - [x] SCSS(needs review)
 - [ ] Bulma
 - [x] Javascript
-- [ ] Typescript
+- [x] Typescript
 - [x] Python
 - [x] SQL
   - [x] Oracle Apex
