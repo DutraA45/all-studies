@@ -1,0 +1,56 @@
+# Algoritmos e Estruturas de Dados
+## Estruturas de Dados
+- [ ] Fila
+  - [ ] Fila Linear
+  - [ ] Fila Circular
+  - [ ] Fila de Prioridade
+- [ ] Pilha (Stack)
+- [ ] Listas
+  - [ ] Lista Simplesmente Encadeada
+  - [ ] Lista Duplamente Encadeada
+  - [ ] Lista Circular
+  - [ ] Lista Estática
+  - [ ] Lista Dinâmica
+- [ ] Arrays (Vetores)
+  - [ ] Array Unidimensional
+  - [ ] Array Multidimensional
+- [ ] Árvores
+  - [ ] Árvore Binária
+  - [ ] Árvore Binária de Busca (BST)
+  - [ ] Árvore AVL
+  - [ ] Árvore Red-Black
+  - [ ] Árvore B
+  - [ ] Árvore B+
+  - [ ] Árvore Heap (Min-Heap/Max-Heap)
+  - [ ] Árvore Trie
+  - [ ] Árvore Segmentada
+  - [ ] Árvore de Fenwick (Binary Indexed Tree)
+  - [ ] Árvore Merkle
+- [ ] Grafos
+  - [ ] Grafo Não Direcionado
+  - [ ] Grafo Direcionado
+  - [ ] Grafo Ponderado
+  - [ ] Grafo Conexo
+  - [ ] Grafo Completo
+  - [ ] Grafo Bipartido
+  - [ ] Grafo Cíclico
+  - [ ] Grafo Acíclico
+- [ ] Tabelas Hash (Hashing)
+  - [ ] Hashing com Encadeamento
+  - [ ] Hashing com Endereçamento Aberto
+    - [ ] Linear Probing
+    - [ ] Quadratic Probing
+    - [ ] Double Hashing
+- [ ] Conjuntos (Sets)
+  - [ ] Conjunto Disjunto (Union-Find)
+  - [ ] Multiconjunto (Bag)
+- [ ] Deque (Double-Ended Queue)
+- [ ] Dicionários
+- [ ] Heap
+  - [ ] Min-Heap
+  - [ ] Max-Heap
+- [ ] Mapas
+  - [ ] HashMap
+  - [ ] TreeMap
+- [ ] Matriz Esparsa
+- [ ] Skip List
