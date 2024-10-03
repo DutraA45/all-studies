@@ -1,62 +1,99 @@
-# Full-Stack Development Studies
+# Estudos em Computação e Full-Stack
 
-## Front-End
+Este repositório reúne todo o meu progresso de estudos em diversas áreas da computação. Abaixo estão listadas as principais categorias de estudo, com links para as seções detalhadas.
+
+## Índice Geral
+1. [Full-Stack Development](#full-stack-development)
+2. [Data Science](#data-science)
+3. [Estruturas de Dados](#estruturas-de-dados)
+4. [Cursos e Plataformas](#cursos-e-plataformas)
+
+---
+
+## Full-Stack Development
+### Tópicos Estudados:
+- HTML, CSS, Javascript
+- React, Vue, Angular
+- NodeJS, Express, NestJS
+
+**Ver mais detalhes:**
+<details>
+<summary>Expandir Full-Stack Development</summary>
+
+#### HTML e CSS:
 - [x] HTML
 - [x] CSS
   - [x] Bootstrap
   - [ ] Tailwind
-  - [x] SCSS (needs review)
-  - [ ] Bulma
-- [ ] ReactJS (studying...)
-  - [ ] NextJS
-  - [ ] Remix
-- [ ] VueJS
-  - [ ] NuxtJS
-- [ ] Angular
-  - [ ] Universal
+
+#### Javascript e Typescript:
 - [x] Javascript
-  - [x] Typescript
+- [x] Typescript
 
-## Mobile Development
-- [ ] React Native
-- [x] Flutter (needs review)
+#### Frameworks e Bibliotecas:
+- [x] React
+- [ ] Vue
+- [ ] Angular
+</details>
 
-## Back-End
-- [x] NodeJS
-  - [x] ExpressJS
-  - [ ] NestJS
-  - [x] KnexJS
-- [ ] Python (back-end frameworks: Flask, Django, etc.)
+---
 
-## Databases
-- [x] SQL
-  - [x] Oracle Apex
-  - [ ] PostgreSQL
-  - [ ] MariaDB
-  - [x] MySQL (needs review)
-  - [x] SQLite (needs review)
-- [x] NoSQL
-  - [x] MongoDB
-  - [x] Neo4j
-- [ ] GraphQL
+## Data Science
+### Tópicos Estudados:
+- Python, Pandas, Numpy
+- Machine Learning
+- Análise de Dados
 
-## Testing
-- [ ] Cypress
-- [ ] Jest
+**Ver mais detalhes:**
+<details>
+<summary>Expandir Data Science</summary>
 
-## Architecture and Design Patterns
-- [ ] SOLID Principles
-- [ ] Clean Architecture
-- [ ] Design Patterns (Factory, Singleton, Observer, etc.)
+#### Python para Data Science:
+- [x] Python Básico
+- [x] Pandas
+- [ ] Machine Learning (em andamento)
 
-## Tools and Other Technologies
-- [ ] Docker
-- [ ] Kubernetes
-- [ ] AWS (or other cloud services)
-- [ ] DevOps (CI/CD pipelines)
+#### Ferramentas:
+- [x] Jupyter Notebook
+- [x] Análise de Dados com Pandas
+</details>
 
-## Additional Topics
-- [ ] WebSockets
-- [ ] WebRTC
-- [ ] Security (JWT, OAuth2, etc.)
-- [ ] Performance Optimization
+---
+
+## Estruturas de Dados
+### Tópicos Estudados:
+- Algoritmos de busca e ordenação
+- Árvores, Listas, Filas, Grafos
+
+**Ver mais detalhes:**
+<details>
+<summary>Expandir Estruturas de Dados</summary>
+
+#### Estruturas Básicas:
+- [x] Listas
+- [x] Pilhas e Filas
+
+#### Estruturas Avançadas:
+- [ ] Árvores Binárias
+- [ ] Grafos
+</details>
+
+---
+
+## Cursos e Plataformas
+### Cursos realizados:
+- OneBitCode
+- Udemy
+
+**Ver mais detalhes:**
+<details>
+<summary>Expandir Cursos e Plataformas</summary>
+
+#### OneBitCode:
+- [x] Módulo 1: HTML, CSS
+- [ ] Módulo 2: Javascript, NodeJS
+
+#### Udemy:
+- [x] Curso de React
+- [ ] Curso de Vue.js
+</details>
