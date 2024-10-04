@@ -13,8 +13,8 @@ Este repositório reúne todo o meu progresso de estudos em diversas áreas da c
 ## Full-Stack Development
 ### Tópicos Estudados:
 - HTML, CSS, Javascript
-- React, Vue, Angular
-- NodeJS, Express, NestJS
+- React
+- NodeJS, Express
 
 **Ver mais detalhes:**
 <details>
@@ -25,6 +25,8 @@ Este repositório reúne todo o meu progresso de estudos em diversas áreas da c
 - [x] CSS
   - [x] Bootstrap
   - [ ] Tailwind
+  - [ ] SCSS
+  - [ ] Bulma
 
 #### Javascript e Typescript:
 - [x] Javascript
@@ -32,8 +34,13 @@ Este repositório reúne todo o meu progresso de estudos em diversas áreas da c
 
 #### Frameworks e Bibliotecas:
 - [x] React
+  - [ ] Redux
+  - [ ] Next
+  - [ ] Remix
 - [ ] Vue
+  - [ ] Nuxt
 - [ ] Angular
+  - [ ] Universal
 </details>
 
 ---
