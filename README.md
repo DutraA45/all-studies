@@ -20,27 +20,46 @@ Este repositório reúne todo o meu progresso de estudos em diversas áreas da c
 <details>
 <summary>Expandir Full-Stack Development</summary>
 
-#### HTML e CSS:
+### Front-End
+#### Linguagens:
 - [x] HTML
 - [x] CSS
   - [x] Bootstrap
   - [ ] Tailwind
-  - [ ] SCSS
+  - [ ] Sass/SCSS
   - [ ] Bulma
-
-#### Javascript e Typescript:
 - [x] Javascript
 - [x] Typescript
+- [ ] CoffeeScript
+- [ ] Elm
 
 #### Frameworks e Bibliotecas:
 - [x] React
-  - [ ] Redux
-  - [ ] Next
+  - [x] Redux
+  - [ ] Next (Atualmente)
   - [ ] Remix
 - [ ] Vue
   - [ ] Nuxt
 - [ ] Angular
   - [ ] Universal
+
+### Back-End
+#### Linguagens:
+- [ ] Python
+  - [ ] Flask
+  - [ ] Django
+- [ ] PHP
+  - [ ] Laravel
+- [ ] Java
+  - [ ] Spring Boot
+- [ ] Node.js
+  - [ ] Express
+  - [ ] NestJS
+- [ ] C#
+  - [ ] ASP.NET Core
+  - [ ] Entity Framework
+  - [ ] Blazor
+
 </details>
 
 ---
