@@ -18,6 +18,8 @@ Este repositório reúne todo o meu progresso de estudos em diversas áreas da c
 
 **Ver mais detalhes:**
 
+**Ver mais detalhes:**
+
 <details>
 <summary>Expandir Front-End Development</summary>
 
@@ -63,6 +65,65 @@ Este repositório reúne todo o meu progresso de estudos em diversas áreas da c
   - [ ] ASP.NET Core
   
 </details>
+
+<details>
+<summary>Expandir Banco de Dados</summary>
+
+### Banco de Dados
+#### SQL:
+- [ ] MySQL
+- [ ] PostgreSQL
+- [ ] SQLite
+- [ ] Microsoft SQL Server
+
+#### NoSQL:
+- [ ] MongoDB
+- [ ] Cassandra
+- [ ] Redis
+- [ ] CouchDB
+
+</details>
+
+<details>
+<summary>Expandir Testes e QA</summary>
+
+### Testes e QA
+#### Tipos de Testes:
+- [ ] Teste Unitário
+- [ ] Teste de Integração
+- [ ] Teste Funcional
+- [ ] Teste de Aceitação
+
+#### Ferramentas:
+- [ ] Jest
+- [ ] Mocha
+- [ ] Chai
+- [ ] Cypress
+- [ ] Selenium
+
+</details>
+
+<details>
+<summary>Expandir Tecnologias de Nuvem e Contêineres</summary>
+
+### Nuvem e Contêineres
+#### Provedores de Nuvem:
+- [ ] AWS (Amazon Web Services)
+- [ ] Google Cloud Platform (GCP)
+- [ ] Microsoft Azure
+
+#### Tecnologias de Contêineres:
+- [ ] Docker
+- [ ] Kubernetes
+- [ ] OpenShift
+
+#### Outras Tecnologias:
+- [ ] Terraform
+- [ ] Ansible
+- [ ] Serverless Framework
+
+</details>
+
 
 ---
 
