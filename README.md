@@ -14,7 +14,7 @@ Este repositório reúne todo o meu progresso de estudos em diversas áreas da c
 ### Tópicos Estudados:
 - HTML, CSS, Javascript
 - React
-- NodeJS, Express
+- NodeJS
 
 **Ver mais detalhes:**
 <details>
