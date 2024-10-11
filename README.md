@@ -18,8 +18,6 @@ Este repositório reúne todo o meu progresso de estudos em diversas áreas da c
 
 **Ver mais detalhes:**
 
-**Ver mais detalhes:**
-
 <details>
 <summary>Expandir Front-End Development</summary>
 
@@ -71,16 +69,15 @@ Este repositório reúne todo o meu progresso de estudos em diversas áreas da c
 
 ### Banco de Dados
 #### SQL:
-- [ ] MySQL
+- [x] MySQL
 - [ ] PostgreSQL
 - [ ] SQLite
-- [ ] Microsoft SQL Server
+- [x] Microsoft SQL Server
 
 #### NoSQL:
-- [ ] MongoDB
-- [ ] Cassandra
-- [ ] Redis
-- [ ] CouchDB
+- [x] MongoDB
+- [x] Redis
+- [x] Neo4j
 
 </details>
 
@@ -121,6 +118,43 @@ Este repositório reúne todo o meu progresso de estudos em diversas áreas da c
 - [ ] Terraform
 - [ ] Ansible
 - [ ] Serverless Framework
+
+</details>
+
+<details>
+<summary>Expandir Arquitetura e Design de Software</summary>
+
+### Arquitetura e Design de Software
+- [x] Padrões de Projeto (MVC)
+- [ ] Microserviços
+- [x] RESTful APIs
+
+</details>
+
+<details>
+<summary>Expandir DevOps</summary>
+
+### DevOps
+- [ ] CI/CD (Jenkins, GitHub Actions)
+- [ ] Monitoramento e Logging (Prometheus, Grafana)
+
+</details>
+
+<details>
+<summary>Expandir Segurança</summary>
+
+### Segurança
+- [ ] Autenticação e Autorização (JWT, OAuth2)
+- [ ] Práticas de Segurança em Aplicações Web (XSS, CSRF, SQL Injection)
+
+</details>
+
+<details>
+<summary>Expandir Desenvolvimento Mobile</summary>
+
+### Desenvolvimento Mobile
+- [ ] Flutter
+- [ ] React Native
 
 </details>
 
