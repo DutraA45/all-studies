@@ -64,6 +64,15 @@ Este repositório reúne todo o meu progresso de estudos em diversas áreas da c
 </details>
 
 <details>
+<summary>Expandir Desenvolvimento Mobile</summary>
+
+### Desenvolvimento Mobile
+- [ ] Flutter
+- [ ] React Native
+
+</details>
+
+<details>
 <summary>Expandir Banco de Dados</summary>
 
 ### Banco de Dados
@@ -79,6 +88,8 @@ Este repositório reúne todo o meu progresso de estudos em diversas áreas da c
 - [x] Neo4j
 
 </details>
+<details>
+<summary>Outros Tópicos</summary>
 
 <details>
 <summary>Expandir Testes e QA</summary>
@@ -148,15 +159,7 @@ Este repositório reúne todo o meu progresso de estudos em diversas áreas da c
 
 </details>
 
-<details>
-<summary>Expandir Desenvolvimento Mobile</summary>
-
-### Desenvolvimento Mobile
-- [ ] Flutter
-- [ ] React Native
-
 </details>
-
 
 ---
 
