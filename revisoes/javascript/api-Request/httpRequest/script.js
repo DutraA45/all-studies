@@ -3,7 +3,7 @@ function requestApiData() {
     xhr.open('GET', 'https://reqres.in/api/products/', true);
     
     xhr.onload = function () {
-        if (xhr.status >= 200 && xhr.status < 300) {
+        if (xhr.readyState == 4 && xhr.status == 200) {
             console.log(JSON.parse(xhr.responseText));
         } else {
             console.error(`Erro: ${xhr.status}`);

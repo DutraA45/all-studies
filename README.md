@@ -88,6 +88,7 @@ Este repositório reúne todo o meu progresso de estudos em diversas áreas da c
 - [x] Neo4j
 
 </details>
+<br>
 <details>
 <summary>Outros Tópicos</summary>
 
