@@ -11,10 +11,9 @@ Este repositório reúne todo o meu progresso de estudos em diversas áreas da c
 ---
 
 ## Full-Stack Development
-### Tópicos Estudados:
-- HTML, CSS, Javascript
-- React
-- NodeJS
+### Estudando no momento:
+- Javascript (Dominando Fundamentos)
+- ReactJS
 
 **Ver mais detalhes:**
 
