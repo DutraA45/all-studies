@@ -31,8 +31,6 @@ Este repositório reúne todo o meu progresso de estudos em diversas áreas da c
   - [ ] Bulma
 - [x] Javascript
 - [x] Typescript
-- [ ] CoffeeScript
-- [ ] Elm
 
 #### Frameworks e Bibliotecas:
 - [x] React
@@ -51,26 +49,20 @@ Este repositório reúne todo o meu progresso de estudos em diversas áreas da c
 
 ### Back-End
 #### Linguagens:
+- [x] Node.js
+  - [x] Express
+  - [ ] NestJS
 - [ ] Python
   - [ ] Flask
   - [ ] Django
-- [ ] PHP
-  - [ ] Laravel
 - [ ] Java
   - [ ] Spring Boot
-  - [ ] Spring Framework
-  - [ ] Spring Data
-  - [ ] Spring Security
-- [ ] Node.js
-  - [ ] Express
-  - [ ] NestJS
+- [ ] PHP
+  - [ ] Laravel
 - [ ] C#
   - [ ] ASP.NET Core
-  - [ ] Entity Framework
-  - [ ] Blazor
-
+  
 </details>
-
 
 ---
 
