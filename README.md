@@ -17,8 +17,9 @@ Este repositório reúne todo o meu progresso de estudos em diversas áreas da c
 - NodeJS
 
 **Ver mais detalhes:**
+
 <details>
-<summary>Expandir Full-Stack Development</summary>
+<summary>Expandir Front-End Development</summary>
 
 ### Front-End
 #### Linguagens:
@@ -43,6 +44,11 @@ Este repositório reúne todo o meu progresso de estudos em diversas áreas da c
 - [ ] Angular
   - [ ] Universal
 
+</details>
+
+<details>
+<summary>Expandir Back-End Development</summary>
+
 ### Back-End
 #### Linguagens:
 - [ ] Python
@@ -52,6 +58,9 @@ Este repositório reúne todo o meu progresso de estudos em diversas áreas da c
   - [ ] Laravel
 - [ ] Java
   - [ ] Spring Boot
+  - [ ] Spring Framework
+  - [ ] Spring Data
+  - [ ] Spring Security
 - [ ] Node.js
   - [ ] Express
   - [ ] NestJS
@@ -61,6 +70,7 @@ Este repositório reúne todo o meu progresso de estudos em diversas áreas da c
   - [ ] Blazor
 
 </details>
+
 
 ---
 
