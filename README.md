@@ -1,12 +1,11 @@
 # Estudos em Computação e Full-Stack
 
-Este repositório reúne todo o meu progresso de estudos em diversas áreas da computação. Abaixo estão listadas as principais categorias de estudo, com links para as seções detalhadas.
+Aqui registro todo o meu progresso de estudos em diversas áreas da computação. Abaixo estão listadas as principais categorias de estudo, com links para as seções detalhadas.
 
 ## Índice Geral
 1. [Full-Stack Development](#full-stack-development)
 2. [Data Science](#data-science)
-3. [Estruturas de Dados](#estruturas-de-dados)
-4. [Cursos e Plataformas](#cursos-e-plataformas)
+3. [Cursos e Plataformas](#cursos-e-plataformas)
 
 ---
 
@@ -15,7 +14,7 @@ Este repositório reúne todo o meu progresso de estudos em diversas áreas da c
 - Javascript (Dominando Fundamentos)
 - ReactJS
 
-**Ver mais detalhes:**
+**Checklist de conhecimento:**
 
 <details>
 <summary>Expandir Front-End Development</summary>
