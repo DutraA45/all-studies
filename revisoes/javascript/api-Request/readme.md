@@ -108,4 +108,6 @@ No fetch, tratamos erros de rede diretamente no primeiro `.then()`, pois o fetch
 
 Sendo assim, utilizamos o `(!response.ok)` para identificar qualquer status HTTP diferente de 200 à 299, nos quais indicam erro.
 
+E o `.catch()` tratá de erros ligado a conexão com a rede, dns ou timeout.
+
 </details>
