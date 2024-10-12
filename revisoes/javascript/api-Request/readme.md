@@ -7,9 +7,11 @@ Existem diversas maneiras de criar requisições HTTP, no entanto, vamos ver som
 3. Axios - Biblioteca externa
 4. jQuery.ajax - Primeira solução adotada para o XHR
 
+<details>
 
-### XMLHttpRequest (XHR)
+<summary>XMLHttpRequest (XHR)</summary>
 
+<br>
 Para realizar uma requisição com XHR, precisamos __instanciar o objeto XMLHttpRequest__ (nativo dos navegadores). Através dele, conseguimos acesso aos seus métodos, onde utilizaremos para configurar e enviar requisições.
 
 ```javascript
@@ -71,3 +73,39 @@ Essa função, normalmente é inicializada, verificando os principais atributos 
 - `xhr.status == 200` se o status de retorno do HTTP foi bem-sucedido.
 
 Caso não ocorra nenhum erro, alguma ação é realizada. No caso do exemplo, foi pego a resposta em JSON, convertido em objeto e exibido no console.
+</details>
+
+
+<details>
+
+<summary>Fetch API</summary>
+
+Fetch API é uma função nativa do javascript que faz requisições HTTP e retorna a classe promise. Portanto, conseguimos utilizar os métodos das promises.
+
+```javascript
+function requestApiData() {
+    fetch('URL')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`Erro: ${response.status}`);
+            }
+            return response.json(); // Converte a resposta para JSON
+        })
+        .then(data => {
+            console.log(data); // Mostra os dados no console
+        })
+        .catch(error => {
+            console.error(error); // Lida com erros
+        });
+}
+```
+
+Sendo assim, o `resolve()` das promises, nesse caso, acontece quando a requisição é bem-sucedida e seu retorno é um objeto chamado `response`. Esse objeto pode ser de qualquer formato, normalmente é um JSON.
+
+Vale lembrar que, nas promises tratamos os erros no método `.catch()`, no entanto, no fetch é diferente. 
+
+No fetch, tratamos erros de rede diretamente no primeiro `.then()`, pois o fetch entende qualquer status de rede como resposta bem-sucedida.
+
+Sendo assim, utilizamos o `(!response.ok)` para identificar qualquer status HTTP diferente de 200 à 299, nos quais indicam erro.
+
+</details>
