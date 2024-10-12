@@ -186,26 +186,6 @@ Este repositório reúne todo o meu progresso de estudos em diversas áreas da c
 
 ---
 
-## Estruturas de Dados
-### Tópicos Estudados:
-- Algoritmos de busca e ordenação
-- Árvores, Listas, Filas, Grafos
-
-**Ver mais detalhes:**
-<details>
-<summary>Expandir Estruturas de Dados</summary>
-
-#### Estruturas Básicas:
-- [x] Listas
-- [x] Pilhas e Filas
-
-#### Estruturas Avançadas:
-- [ ] Árvores Binárias
-- [ ] Grafos
-</details>
-
----
-
 ## Cursos e Plataformas
 ### Cursos realizados:
 - OneBitCode
@@ -216,10 +196,30 @@ Este repositório reúne todo o meu progresso de estudos em diversas áreas da c
 <summary>Expandir Cursos e Plataformas</summary>
 
 #### OneBitCode:
-- [x] Módulo 1: HTML, CSS
-- [ ] Módulo 2: Javascript, NodeJS
+- [ ] Start - Python
+- [ ] JavaScript
+- [ ] Typescript
+- [ ] Fundamentos do React
+- [ ] Exercícios de JS
+- [x] HTML 5
+- [ ] Dominando o NodeJS
+- [ ] MongoDB
+- [ ] CSS Moderno
+- [x] CSS3
+- [ ] EAD inspirado no Netflix
+- [ ] Next.js
+- [ ] SQL + Sequelize
+- [ ] Git e Github
+- [ ] Sass
+- [ ] Bootstrap
+- [ ] Bulma (framework CSS)
 
 #### Udemy:
-- [x] Curso de React
-- [ ] Curso de Vue.js
+- [ ] Aprenda e domine a linguagem C
+- [ ] Introdução a estrutura de dados em C
+- [ ] Javascript e Typescript - Basico ao avançado
+- [ ] Java completo
+- [ ] React Avançado
 </details>
+
+
