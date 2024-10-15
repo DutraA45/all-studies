@@ -14,6 +14,8 @@ Aqui registro todo o meu progresso de estudos em diversas áreas da computação
 - Javascript (Dominando Fundamentos)
 - ReactJS
 
+<br>
+
 **Checklist de conhecimento:**
 
 <details>
@@ -164,12 +166,14 @@ Aqui registro todo o meu progresso de estudos em diversas áreas da computação
 ---
 
 ## Data Science
-### Tópicos Estudados:
+### Estudando no momento:
 - Python, Pandas, Numpy
 - Machine Learning
 - Análise de Dados
 
-**Ver mais detalhes:**
+<br>
+
+**Checklist de conhecimento:**
 <details>
 <summary>Expandir Data Science</summary>
 
