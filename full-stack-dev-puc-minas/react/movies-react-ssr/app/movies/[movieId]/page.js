@@ -1,5 +1,15 @@
-import { getMovie } from "@/services/movies.service";
+import { getMovie, getPopularMovies } from "@/services/movies.service";
 import style from "./MovieDetail.module.css";
+
+export async function getStaticPaths() {
+    const { data } = await getPopularMovies();
+    const paths = data.results.map((movie) => ({ params: { movieId: `${movie.id}` } }))
+
+    return {
+        paths,
+        fallback: true,
+    }
+}
 
 export default async function MovieDetail({ params }) {
     const movie = await getMovie(params.movieId);
