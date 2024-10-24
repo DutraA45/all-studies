@@ -4,7 +4,12 @@ import style from "./MovieDetail.module.css";
 
 export function MovieDetail() {
     const { id } = useParams();
-    const movie = useMovie(id);
+    // const movie = useMovie(id);
+    const { data: movie, isLoading } = useMovie(id);
+
+    if (isLoading) {
+        return <h1>Loading...</h1>
+    }
 
     return (
         <section className={style.movie}>
