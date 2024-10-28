@@ -6,3 +6,12 @@ export default configureStore ({
         favorito,
     },
 });
+
+export const setupStore = preloadedState => {
+    return configureStore({
+        reducer: {
+            favorito,
+        },
+        preloadedState
+    });
+}
