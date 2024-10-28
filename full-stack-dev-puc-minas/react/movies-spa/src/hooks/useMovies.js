@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 import { getMovie, getPopularMovies } from "../services/movies.service";
 import { useQuery } from "@tanstack/react-query"
 
