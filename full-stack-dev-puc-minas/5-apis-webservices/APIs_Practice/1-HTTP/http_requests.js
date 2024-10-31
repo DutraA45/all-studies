@@ -106,6 +106,6 @@ async function deleteData() {
 // getData()
 // postData()
 // putData()
-deleteData()
+// deleteData()
 
 
