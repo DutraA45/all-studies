@@ -1,2 +1,3 @@
-# FullStack Puc Minas
-Exercises, projects and learnings developed in the postgraduate course in Full Stack development at PUC Minas
+# APIs Webservices
+Este módulo possuiu somente teoria aprofundada e detalhada sobre HTTP e APIs.
+Sendo assim, para melhor compreensão dos temas, peguei todos os principais tópicos e trouxe para o repositório onde demonstro simples aplicações prática para aprendizado.
