@@ -1,0 +1,28 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "required": [
+      "nome",
+      "email"
+    ],
+    "type": "object",
+    "properties": {
+      "nome": {
+        "type": "string",
+        "description": "nome da pessoa"
+      },
+      "email": {
+        "type": "string",
+        "description": "nome da pessoa"
+      },
+      "telefone": {
+        "type": "string",
+        "description": "nome da pessoa"
+      },
+      "tags": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
