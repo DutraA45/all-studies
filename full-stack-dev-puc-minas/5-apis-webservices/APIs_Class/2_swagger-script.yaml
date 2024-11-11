@@ -1,0 +1,45 @@
+openapi: 3.0.0
+info:
+  title: API de Contatos
+  version: 1.0.0
+  description: Aplicação para gerenciamento de contatos de pessoas e organizações
+  contact:
+    email: jeffinho.angelo@gmail.com
+    name: Jefferson Dutra
+servers:
+  - url: http://localhost:5500
+    variables: {}
+    description: Servidor Local
+paths:
+  /pessoas:
+    summary: Manipular informações relacionadas às pessoas da aplicação
+    get:
+      summary: Listar pessoas cadastradas
+      tags:
+        - Pessoas
+      description: ''
+      operationId: listaPessoas
+      responses:
+        200:
+          description: Operação bem sucedida
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    nome:
+                      type: string
+                      description: nome da pessoa
+                    email:
+                      type: string
+                      description: nome da pessoa
+                    telefone:
+                      type: string
+                      description: nome da pessoa
+                    tags:
+                      type: array
+                      items:
+                        type: string
+      
