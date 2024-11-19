@@ -1,0 +1,6 @@
+class UserRepository {
+
+        async findOneByEmail() {
+
+        }
+};
