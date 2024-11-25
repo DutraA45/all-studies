@@ -1,6 +1,7 @@
 require('dotenv').config();
 
 const { MongoClient } = require("mongodb");
+const UserRepository = require('./user-repository')
 const uri = process.env.MONGO_URI;
 
 
@@ -14,19 +15,53 @@ describe('UserRepository', () => {
 
         client = new MongoClient(uri);
         await client.connect();
+        collection = client.db('users_db').collection('users');
+        userRepository = new UserRepository(collection);
     })
 
     afterAll(async () => {
         await client.close();
     })
 
+    beforeEach(async () => {
+        await collection.deleteMany({})
+    })
+
     describe('findOneByEmail', () => {
-        test.todo('Deve retornar o usuário john@doe.com')
-        test.todo('Deve lançar uma exceção para um usuário não existente')
+        test('Deve retornar o usuário john@doe.com', async () => {
+
+            const result = await collection.insertOne({
+                name: 'John Doe',
+                email: 'john@doe.com'
+            })
+
+            const user = await userRepository.findOneByEmail('john@doe.com');
+
+            expect(user).toStrictEqual({
+                _id: result.insertedId,
+                name: 'John Doe',
+                email: 'john@doe.com'
+            })
+
+        })
+        test('Deve lançar uma exceção para um usuário não existente', async () => {
+            await expect(userRepository.findOneByEmail('john@doe.com')).rejects.toThrow('User with email john@doe.com does not exist')
+        })
     })
 
     describe('insert', () => {
-        test.todo('Inserir um novo usuário')
+        test('Inserir um novo usuário', async() => {
+
+            const user = await userRepository.insert({
+                name: 'John Doe',
+                email: 'john@doe.com'
+            })
+
+            const result = await userRepository.findOneByEmail('john@doe.com')
+
+            expect(result).toStrictEqual(user)
+
+        })
     })
 
     describe('update', () => {
@@ -34,8 +69,19 @@ describe('UserRepository', () => {
         test.todo('Deve lançar uma exceção para um usuário não existente')
     })
 
-    describe('update', () => {
-        test.todo('Deve remover um usuário existente')
+    describe('delete', () => {
+        test('Deve remover um usuário existente', async () => {
+
+            const user = await userRepository.insert({
+                name: 'John Doe',
+                email: 'john@doe.com'
+            })
+
+            await userRepository.delete(user._id)
+
+            await expect(userRepository.findOneByEmail('john@doe.com')).rejects.toThrow()
+            
+        })
         test.todo('Deve lançar uma exceção para um usuário não existente')
     })
 
