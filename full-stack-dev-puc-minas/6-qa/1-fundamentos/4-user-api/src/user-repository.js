@@ -1,8 +1,12 @@
+const { ObjectId } = require('mongodb'); // Importação do ObjectId
+
+
 function addIdToUser(user) {
-        user.id = user._id;
-        delete user._id
-        return user;
+        const { _id, ...rest } = user;  // Extrai _id e o resto do objeto
+        return { ...rest, id: _id }; // Mantém o _id como ObjectId e adiciona o campo id
 }
+
+
 
 class UserRepository {
 
@@ -38,25 +42,33 @@ class UserRepository {
         }
 
         async update(id, data) {
+                console.log("ID recebido no método update:", id);
+                console.log("Data recebido no método update:", data);
 
-                const result = await this.collection.findOneAndUpdate({ _id: id }, {
-                        $set: data
-                }, {
-                        returnNewDocument: true
-                })
+                const existingUser = await this.collection.findOne({ _id: id });
+                console.log("Documento encontrado antes do update:", existingUser);
 
-                if (result.value === null) {
-                        throw Error(`User with id ${id} was not found`)
+                const result = await this.collection.findOneAndUpdate(
+                        { _id: id },
+                        { $set: data },
+                        { returnDocument: "after" }
+                );
+                console.log("Resultado do findOneAndUpdate:", result);
+
+                if (!result.value) {
+                        throw new Error(`User with id ${id} was not found`);
                 }
 
-                return await this.findOneById(id)
+                return addIdToUser(result.value);
         }
 
-        async delete(id) {
-                const result = await this.collection.deleteOne({ _id: id })
 
-                if (result.deletedCount === 0) {
-                        throw new Error(`User with id ${id} does not exist`)
+
+        async delete(id) {
+                const result = await this.collection.deleteOne({ _id: id });
+
+                if (result.deletedCount === 0) { // Validação mantida
+                        throw new Error(`User with id ${id} does not exist`);
                 }
         }
 
