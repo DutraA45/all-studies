@@ -1,18 +1,23 @@
 {
-  "name": "4-mongodb-integration-test",
+  "name": "integration-test",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest --watchAll"
+    "clear:db": "node src/clear.database",
+    "start": "node src/server.js",
+    "test": "jest --watchAll --detectOpenHandles"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "jest": "^29.7.0"
+    "jest": "^29.7.0",
+    "supertest": "^6.1.6"
   },
   "dependencies": {
-    "dotenv": "^16.4.5",
-    "mongodb": "^6.10.0"
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mongodb": "^4.2.0"
   }
 }
