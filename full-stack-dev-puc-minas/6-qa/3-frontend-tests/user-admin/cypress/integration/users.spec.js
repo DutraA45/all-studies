@@ -1,7 +1,8 @@
 describe("Gestão de usuários", () => {
 
     beforeEach(() => {
-        cy.exec('npm --prefix ../user-api run clear:db')
+        // Limpa o banco de dados antes de qualquer teste
+        cy.exec('npm --prefix ../../2-backend-tests/user-api run clear:db')
     })
 
     describe("Listagem", () => {
