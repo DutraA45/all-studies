@@ -35,7 +35,7 @@ Aqui registro todo o meu progresso de estudos em diversas áreas da computação
 #### Frameworks e Bibliotecas:
 - [x] React
   - [x] Redux
-  - [ ] Next (Atualmente)
+  - [x] Next
   - [ ] Remix
 - [ ] Vue
   - [ ] Nuxt
@@ -98,16 +98,16 @@ Aqui registro todo o meu progresso de estudos em diversas áreas da computação
 
 ### Testes e QA
 #### Tipos de Testes:
-- [ ] Teste Unitário
-- [ ] Teste de Integração
-- [ ] Teste Funcional
-- [ ] Teste de Aceitação
+- [x] Teste Unitário
+- [x] Teste de Integração
+- [x] Teste Funcional
+- [x] Teste de Aceitação
 
 #### Ferramentas:
-- [ ] Jest
+- [x] Jest
 - [ ] Mocha
 - [ ] Chai
-- [ ] Cypress
+- [x] Cypress
 - [ ] Selenium
 
 </details>
@@ -122,7 +122,7 @@ Aqui registro todo o meu progresso de estudos em diversas áreas da computação
 - [ ] Microsoft Azure
 
 #### Tecnologias de Contêineres:
-- [ ] Docker
+- [x] Docker
 - [ ] Kubernetes
 - [ ] OpenShift
 
@@ -138,7 +138,7 @@ Aqui registro todo o meu progresso de estudos em diversas áreas da computação
 
 ### Arquitetura e Design de Software
 - [x] Padrões de Projeto (MVC)
-- [ ] Microserviços
+- [x] Microserviços
 - [x] RESTful APIs
 
 </details>
@@ -147,7 +147,7 @@ Aqui registro todo o meu progresso de estudos em diversas áreas da computação
 <summary>Expandir DevOps</summary>
 
 ### DevOps
-- [ ] CI/CD (Jenkins, GitHub Actions)
+- [x] CI/CD (Jenkins, GitHub Actions)
 - [ ] Monitoramento e Logging (Prometheus, Grafana)
 
 </details>
@@ -156,7 +156,7 @@ Aqui registro todo o meu progresso de estudos em diversas áreas da computação
 <summary>Expandir Segurança</summary>
 
 ### Segurança
-- [ ] Autenticação e Autorização (JWT, OAuth2)
+- [x] Autenticação e Autorização (JWT, OAuth2)
 - [ ] Práticas de Segurança em Aplicações Web (XSS, CSRF, SQL Injection)
 
 </details>
