@@ -11,8 +11,7 @@ Aqui registro todo o meu progresso de estudos em diversas áreas da computação
 
 ## Full-Stack Development
 ### Estudando no momento:
-- Jest
-- Cypress.io
+- Flutter
 
 <br>
 
