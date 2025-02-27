@@ -1,6 +1,5 @@
 # Desafio 2
 
-
 # João adora andar de bicicleta. Ele sabe que é importante se manter hidratado, por
 # isso ele bebe 0.5 litro de água por hora de ciclismo. Escreva uma função em Python,
 # e o teste de unidade associado, que receba o tempo em horas e retorne a
