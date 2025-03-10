@@ -21,7 +21,6 @@ def total_pessoas_onibus(fluxo):
     
     for i in fluxo:
         total_acumulado += i[0] - i[1] 
-        resultado.append(total_acumulado) 
     
     return total_acumulado  
 
