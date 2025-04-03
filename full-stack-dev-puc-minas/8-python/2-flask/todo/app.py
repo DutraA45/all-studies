@@ -43,15 +43,15 @@ class Task(db.Model):
 @app.route('/', methods=['POST', 'GET'])
 def index():
     if request.method == 'POST':
-        task = Task(request.form['description'])
+        task = Task(description=request.form['description'])
         try:
             db.session.add(task)
             db.session.commit()
             return redirect('/')
         except:
-            return "Houve um erro ao inserir a tarefa"
+            return "Houve um erro, ao inserir a tarefa"
     else:
-        tasks = Task.query.ordey_by(Task.date_created).all()
+        tasks = Task.query.order_by(Task.date_created).all()
         return render_template('index.html', tasks=tasks)
     
 # Rota para remoção de uma tarefa
