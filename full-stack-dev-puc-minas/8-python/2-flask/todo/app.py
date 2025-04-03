@@ -6,7 +6,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 
 #Imports do Flask e Bootstrap
-from flask import Flask, render_template
+from flask import Flask, render_template, request, redirect
 from flask_bootstrap import Bootstrap
 
 # instancia um objeto Flask
@@ -39,7 +39,42 @@ class Task(db.Model):
 
 ## ---------------
 
-# Rota index
-@app.route('/')
+# Rotas e funções tratadoras
+@app.route('/', methods=['POST', 'GET'])
 def index():
-    return render_template('index.html')
+    if request.method == 'POST':
+        task = Task(request.form['description'])
+        try:
+            db.session.add(task)
+            db.session.commit()
+            return redirect('/')
+        except:
+            return "Houve um erro ao inserir a tarefa"
+    else:
+        tasks = Task.query.ordey_by(Task.date_created).all()
+        return render_template('index.html', tasks=tasks)
+    
+# Rota para remoção de uma tarefa
+@app.route('/delete/<int:id>')
+def delete(id):
+    task = Task.query.get_or_404(id)
+    try:
+        db.session.delete(task)
+        db.session.commit()
+        return redirect('/')
+    except:
+        return "Houve um problema na remoção da tarefa"
+    
+# Rota para atualização de uma tarefa
+@app.route('/update/<int:id>', methods=['POST', 'GET'])
+def update(id):
+    task = Task.query.get_or_404(id)
+    if request.method == 'POST':
+        task.description = request.form['description']
+        try:
+            db.session.commit()
+            return redirect('/')
+        except:
+            return "Houve um erro ao atualizar a tarefa"
+    else:
+        return render_template('update.html', task=task)
