@@ -1,0 +1,30 @@
+# Ambiente virtual
+venv/
+
+# Cache do Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Banco de dados (opcional)
+db.sqlite3
+
+# Arquivos de migração (opcional)
+**/migrations/*.py
+!**/migrations/__init__.py
+
+# IDEs e editores
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Arquivos do sistema
+.DS_Store
+Thumbs.db
+
+# Arquivos de log
+*.log
+
+# Pytest cache
+.pytest_cache/
