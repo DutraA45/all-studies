@@ -1,1 +1,0 @@
-https://courses.angulartraining.com/course/react-level-1-certification-exam

@@ -1,1 +1,0 @@
-https://certificates.dev/angular/#pricing
